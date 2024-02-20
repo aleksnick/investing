@@ -18,7 +18,7 @@ export const KlineChart = () => {
   const [data, setData] = useState<KlineChartData>();
 
   const updateData = async () => {
-    const start = getUnixTime(subDays(new Date(), 120)) * 1000;
+    const start = getUnixTime(subDays(new Date(), 30)) * 1000;
     const end = getUnixTime(new Date()) * 1000;
 
     const newData = await kline({

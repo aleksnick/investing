@@ -1,14 +1,11 @@
 'use client';
 
-import { registerIndicator, Chart } from 'klinecharts';
 import _ from 'lodash';
-import { OrderLogData, Interval } from '../../../types';
-import { getCache } from '../../../utils/cache';
+import { registerIndicator, Chart } from 'klinecharts';
+import { history } from '../../../actions/history';
 
 export const History = async (chart: Chart, symbol: string, id = '1') => {
-  const historyData = (await getCache(
-    `history/${symbol}-${id}.json`,
-  )) as OrderLogData;
+  const historyData = await history(id, symbol);
 
   if (_.isEmpty(historyData)) {
     return;

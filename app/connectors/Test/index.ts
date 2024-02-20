@@ -55,7 +55,7 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
       };
     },
     saveStat: (symbol: string, id: string) => {
-      setCache(`history/${symbol}-${id}.json`, ORDER_LOG);
+      setCache('history', `${symbol}-${id}.json`, ORDER_LOG);
     },
     getOrder: () => {
       return new Promise((resolve) => resolve(CURRENT_ORDER));

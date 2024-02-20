@@ -12,9 +12,6 @@ import { getCache, setCache } from '../../utils/cache';
 import { mergeData } from '../../utils/array';
 import { KlineChartData, KlineRequest, Interval, ConnectorCreator } from '../../types';
 
-const getCachePath = (symbol: string, interval: Interval) =>
-  `data/${symbol}-${interval}.json`;
-
 export const ByBitConnectorCreator: ConnectorCreator = (config) => {
   const request = async ({ symbol, interval, start, end }: KlineRequest) => {
     try {
@@ -49,7 +46,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
       start: defaultStart,
       end: defaultEnd,
     }: KlineRequest) => {
-      let data = getCache(getCachePath(symbol, interval)) as KlineChartData;
+      let data = getCache('data', `${symbol}-${interval}.json`) as KlineChartData;
       let loadedData = [] as KlineChartData;
       const cacheTimestamp = getDataTimestamp(data);
 
@@ -85,7 +82,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
 
       data = mergeData(data, loadedData);
 
-      setCache(getCachePath(symbol, interval), data);
+      setCache('data', `${symbol}-${interval}.json`, data);
 
       data = data.filter((item) => {
         const currentTimestamp = getItemTimestamp(item);
