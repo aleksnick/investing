@@ -1,0 +1,48 @@
+import ProgressBar from 'progress';
+import chalk from 'chalk';
+import { TestingBox } from '../types';
+import { formatUnix } from '../utils/timestamp';
+import { TestConnectorCreator } from '../connectors/Test';
+
+const _5m = 300000;
+const INC = _5m * 1;
+
+export const testing: TestingBox = async (
+  id,
+  strategyCreator,
+  { symbol, start, end },
+  config,
+) => {
+  const times = new Array<number>();
+  const strategy = strategyCreator(config);
+  const testConnector = TestConnectorCreator({
+    key: '',
+    secret: '',
+  });
+
+  for (let dt = start!; dt <= end; dt += INC) {
+    times.push(dt);
+  }
+
+  const bar = new ProgressBar(':bar :id :date :amount :minamount :orders', {
+    total: times.length,
+    width: 20,
+  });
+
+  for await (const dt of times) {
+    await strategy(symbol, dt, testConnector);
+    let stat = testConnector.getStat?.();
+
+    bar.tick({
+      id: chalk.blue(`#${id}`),
+      orders: chalk.cyan(stat?.orders),
+      amount: chalk.green(`${stat!.amount.toFixed(2)}$`),
+      minamount: chalk.red(`${stat!.minAmount.toFixed(2)}$`),
+      date: chalk.yellow(formatUnix(dt)),
+    });
+  }
+
+  testConnector.saveStat?.(symbol, id);
+
+  return testConnector.getStat();
+};

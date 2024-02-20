@@ -1,0 +1,64 @@
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { init, Chart, dispose } from 'klinecharts';
+import { getUnixTime, subDays } from 'date-fns';
+import { kline } from '../../actions/kline';
+import { KlineChartData } from '../../types';
+import { MaIndicator } from './indicators/MA';
+import { EmaIndicator } from './indicators/EMA';
+import { WmaIndicator } from './indicators/WMA';
+import { VolIndicator } from './indicators/VOL';
+import { History } from './indicators/History';
+
+const SYMBOL = 'APTUSDT';
+const INTERVAL = '5';
+
+export const KlineChart = () => {
+  const [data, setData] = useState<KlineChartData>();
+
+  const updateData = async () => {
+    const start = getUnixTime(subDays(new Date(), 120)) * 1000;
+    const end = getUnixTime(new Date()) * 1000;
+
+    const newData = await kline({
+      symbol: SYMBOL,
+      interval: INTERVAL,
+      start,
+      end,
+    });
+
+    setData(newData);
+  };
+
+  useEffect(() => {
+    updateData();
+  }, []);
+
+  useEffect(() => {
+    // initialize the chart
+    if (!data) {
+      return () => null;
+    }
+
+    const chart = init('chart') as Chart;
+
+    // add data to the chart
+    chart.applyNewData(data);
+
+    VolIndicator(chart);
+    MaIndicator(chart, data, [3, 99]);
+    // EmaIndicator(chart, data, [3, 30]);
+    // WmaIndicator(chart, data, [3, 40]);
+    History(chart, SYMBOL, '1');
+
+    // chart.createIndicator('SAR', true, { id: 'candle_pane' });
+
+    return () => {
+      // destroy chart
+      dispose('chart');
+    };
+  }, [data]);
+
+  return <div id="chart" style={{ width: 1024, height: 800 }} />;
+};

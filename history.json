@@ -1,0 +1,1907 @@
+[
+  {
+    "symbol": "SEIUSDT",
+    "qty": 170,
+    "limit": 100,
+    "price": 0.58682,
+    "dt": 1704078900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 170,
+    "price": 0.57862,
+    "dt": 1704080100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 170,
+    "limit": 100,
+    "price": 0.58612,
+    "dt": 1704081900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 170,
+    "price": 0.57616,
+    "dt": 1704083400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 171,
+    "limit": 100,
+    "price": 0.58382,
+    "dt": 1704085200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 171,
+    "price": 0.62979,
+    "dt": 1704099600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.71991,
+    "dt": 1704155700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.77803,
+    "dt": 1704162000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "limit": 100,
+    "price": 0.75616,
+    "dt": 1704182400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "price": 0.74896,
+    "dt": 1704182700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "limit": 100,
+    "price": 0.75559,
+    "dt": 1704183000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "price": 0.75122,
+    "dt": 1704188400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "limit": 100,
+    "price": 0.75729,
+    "dt": 1704196800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "price": 0.74582,
+    "dt": 1704198900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "limit": 100,
+    "price": 0.7539,
+    "dt": 1704201000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "price": 0.74947,
+    "dt": 1704201600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 131,
+    "limit": 100,
+    "price": 0.75936,
+    "dt": 1704202200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 131,
+    "price": 0.74978,
+    "dt": 1704206400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "limit": 100,
+    "price": 0.75556,
+    "dt": 1704213300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "price": 0.74266,
+    "dt": 1704216900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "limit": 100,
+    "price": 0.75341,
+    "dt": 1704219000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 132,
+    "price": 0.74602,
+    "dt": 1704223200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.72116,
+    "dt": 1704253500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.72796,
+    "dt": 1704278400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "limit": 100,
+    "price": 0.75148,
+    "dt": 1704286200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "price": 0.84367,
+    "dt": 1704297300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 122,
+    "limit": 100,
+    "price": 0.81481,
+    "dt": 1704342000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 122,
+    "price": 0.78948,
+    "dt": 1704349200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "limit": 100,
+    "price": 0.78226,
+    "dt": 1704371400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "price": 0.85263,
+    "dt": 1704381300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 122,
+    "limit": 100,
+    "price": 0.81319,
+    "dt": 1704395100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 122,
+    "price": 0.80185,
+    "dt": 1704398700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 122,
+    "limit": 100,
+    "price": 0.81346,
+    "dt": 1704399600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 122,
+    "price": 0.80085,
+    "dt": 1704401100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "limit": 100,
+    "price": 0.74878,
+    "dt": 1704442800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "price": 0.72835,
+    "dt": 1704449400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "limit": 100,
+    "price": 0.7292,
+    "dt": 1704469500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "price": 0.71332,
+    "dt": 1704473700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "limit": 100,
+    "price": 0.71475,
+    "dt": 1704481500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "price": 0.715,
+    "dt": 1704489000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.71979,
+    "dt": 1704489300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.7126,
+    "dt": 1704494100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.72116,
+    "dt": 1704495900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.71453,
+    "dt": 1704498000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "limit": 100,
+    "price": 0.71886,
+    "dt": 1704498900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "price": 0.71205,
+    "dt": 1704499200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67856,
+    "dt": 1704527700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.6688,
+    "dt": 1704530400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 149,
+    "limit": 100,
+    "price": 0.66963,
+    "dt": 1704531900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 149,
+    "price": 0.65699,
+    "dt": 1704539100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 151,
+    "limit": 100,
+    "price": 0.65968,
+    "dt": 1704550800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 151,
+    "price": 0.66013,
+    "dt": 1704551400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "limit": 100,
+    "price": 0.65352,
+    "dt": 1704572700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "price": 0.64749,
+    "dt": 1704575400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "limit": 100,
+    "price": 0.65145,
+    "dt": 1704584700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "price": 0.66984,
+    "dt": 1704609000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 150,
+    "limit": 100,
+    "price": 0.66385,
+    "dt": 1704627900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 150,
+    "price": 0.65736,
+    "dt": 1704628200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 150,
+    "limit": 100,
+    "price": 0.66619,
+    "dt": 1704633300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 150,
+    "price": 0.71741,
+    "dt": 1704657900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.64415,
+    "dt": 1704698100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.62858,
+    "dt": 1704699300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 157,
+    "limit": 100,
+    "price": 0.63381,
+    "dt": 1704700200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 157,
+    "price": 0.61777,
+    "dt": 1704707400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 159,
+    "limit": 100,
+    "price": 0.62828,
+    "dt": 1704708900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 159,
+    "price": 0.69554,
+    "dt": 1704715800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "limit": 100,
+    "price": 0.73623,
+    "dt": 1704775500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "price": 0.73296,
+    "dt": 1704790200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "limit": 100,
+    "price": 0.73679,
+    "dt": 1704797100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "price": 0.738,
+    "dt": 1704797400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 134,
+    "limit": 100,
+    "price": 0.74104,
+    "dt": 1704798000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 134,
+    "price": 0.74265,
+    "dt": 1704800700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "limit": 100,
+    "price": 0.73944,
+    "dt": 1704801000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "price": 0.73572,
+    "dt": 1704802500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 145,
+    "limit": 100,
+    "price": 0.68556,
+    "dt": 1704846000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 145,
+    "price": 0.67869,
+    "dt": 1704846300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68237,
+    "dt": 1704852900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.67511,
+    "dt": 1704855000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67936,
+    "dt": 1704855900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.6714,
+    "dt": 1704861000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67689,
+    "dt": 1704866100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.67215,
+    "dt": 1704870900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67568,
+    "dt": 1704879300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.6706,
+    "dt": 1704880200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.67122,
+    "dt": 1704884100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.67005,
+    "dt": 1704884400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "limit": 100,
+    "price": 0.65684,
+    "dt": 1704906300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "price": 0.70923,
+    "dt": 1704920700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "limit": 100,
+    "price": 0.74795,
+    "dt": 1704959700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "price": 0.80512,
+    "dt": 1704978000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "limit": 100,
+    "price": 0.78263,
+    "dt": 1704984000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "price": 0.767,
+    "dt": 1704985200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 131,
+    "limit": 100,
+    "price": 0.7614,
+    "dt": 1705003800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 131,
+    "price": 0.75513,
+    "dt": 1705005600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "limit": 100,
+    "price": 0.74805,
+    "dt": 1705014000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "price": 0.73942,
+    "dt": 1705017600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "limit": 100,
+    "price": 0.74734,
+    "dt": 1705017900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 133,
+    "price": 0.7339,
+    "dt": 1705018800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "limit": 100,
+    "price": 0.7282,
+    "dt": 1705052400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "price": 0.72388,
+    "dt": 1705065900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "limit": 100,
+    "price": 0.72605,
+    "dt": 1705066200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "price": 0.72372,
+    "dt": 1705068000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 136,
+    "limit": 100,
+    "price": 0.7318,
+    "dt": 1705068900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 136,
+    "price": 0.71707,
+    "dt": 1705070400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.67322,
+    "dt": 1705121100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.69964,
+    "dt": 1705154700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 141,
+    "limit": 100,
+    "price": 0.70552,
+    "dt": 1705156800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 141,
+    "price": 0.70619,
+    "dt": 1705164900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.72031,
+    "dt": 1705181100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.71057,
+    "dt": 1705194000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "limit": 100,
+    "price": 0.71838,
+    "dt": 1705194600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "price": 0.71511,
+    "dt": 1705199700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "limit": 100,
+    "price": 0.71733,
+    "dt": 1705200000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 139,
+    "price": 0.71948,
+    "dt": 1705207500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.72335,
+    "dt": 1705209000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.72511,
+    "dt": 1705230000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 136,
+    "limit": 100,
+    "price": 0.73007,
+    "dt": 1705241400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 136,
+    "price": 0.7239,
+    "dt": 1705242000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "limit": 100,
+    "price": 0.72762,
+    "dt": 1705245000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 137,
+    "price": 0.72527,
+    "dt": 1705245300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 140,
+    "limit": 100,
+    "price": 0.71359,
+    "dt": 1705270500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 140,
+    "price": 0.70982,
+    "dt": 1705271100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 140,
+    "limit": 100,
+    "price": 0.71115,
+    "dt": 1705278900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 140,
+    "price": 0.72717,
+    "dt": 1705306500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 136,
+    "limit": 100,
+    "price": 0.73027,
+    "dt": 1705307100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 136,
+    "price": 0.72728,
+    "dt": 1705307700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.71972,
+    "dt": 1705339500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.77472,
+    "dt": 1705344000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 123,
+    "limit": 100,
+    "price": 0.8079,
+    "dt": 1705411800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 123,
+    "price": 0.79419,
+    "dt": 1705414500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 123,
+    "limit": 100,
+    "price": 0.8068,
+    "dt": 1705418700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 123,
+    "price": 0.7834,
+    "dt": 1705421700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 126,
+    "limit": 100,
+    "price": 0.78816,
+    "dt": 1705438800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 126,
+    "price": 0.78423,
+    "dt": 1705439700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "limit": 100,
+    "price": 0.78736,
+    "dt": 1705440300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "price": 0.78234,
+    "dt": 1705445100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 128,
+    "limit": 100,
+    "price": 0.78046,
+    "dt": 1705454400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 128,
+    "price": 0.77374,
+    "dt": 1705455900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "limit": 100,
+    "price": 0.78126,
+    "dt": 1705457700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "price": 0.77952,
+    "dt": 1705465200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "limit": 100,
+    "price": 0.7865,
+    "dt": 1705465800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 127,
+    "price": 0.77692,
+    "dt": 1705470300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 126,
+    "limit": 100,
+    "price": 0.78821,
+    "dt": 1705474200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 126,
+    "price": 0.78146,
+    "dt": 1705477200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 126,
+    "limit": 100,
+    "price": 0.79045,
+    "dt": 1705478700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 126,
+    "price": 0.79736,
+    "dt": 1705497000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 123,
+    "limit": 100,
+    "price": 0.80818,
+    "dt": 1705498500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 123,
+    "price": 0.87206,
+    "dt": 1705517400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.72367,
+    "dt": 1705645800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.71674,
+    "dt": 1705652100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.71996,
+    "dt": 1705653000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.71878,
+    "dt": 1705665600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "limit": 100,
+    "price": 0.72263,
+    "dt": 1705671000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 138,
+    "price": 0.71895,
+    "dt": 1705671600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 141,
+    "limit": 100,
+    "price": 0.70661,
+    "dt": 1705694700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 141,
+    "price": 0.69013,
+    "dt": 1705709700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68328,
+    "dt": 1705736100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.67347,
+    "dt": 1705737300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.67327,
+    "dt": 1705755000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.67141,
+    "dt": 1705759800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.6739,
+    "dt": 1705761300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.66856,
+    "dt": 1705762800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67648,
+    "dt": 1705764300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.66808,
+    "dt": 1705765200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.67146,
+    "dt": 1705768200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.67042,
+    "dt": 1705769100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 149,
+    "limit": 100,
+    "price": 0.66985,
+    "dt": 1705769700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 149,
+    "price": 0.67154,
+    "dt": 1705774500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.67185,
+    "dt": 1705775100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.67665,
+    "dt": 1705794000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68424,
+    "dt": 1705795800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.67884,
+    "dt": 1705799700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68209,
+    "dt": 1705800900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.67689,
+    "dt": 1705801800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67966,
+    "dt": 1705805100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.68,
+    "dt": 1705810200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68217,
+    "dt": 1705812600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.6801,
+    "dt": 1705815000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68266,
+    "dt": 1705824900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.68079,
+    "dt": 1705826100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68208,
+    "dt": 1705832400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.67941,
+    "dt": 1705835400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "limit": 100,
+    "price": 0.67953,
+    "dt": 1705839300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 147,
+    "price": 0.6773,
+    "dt": 1705839600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "limit": 100,
+    "price": 0.68116,
+    "dt": 1705843800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 146,
+    "price": 0.6776,
+    "dt": 1705847100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 162,
+    "limit": 100,
+    "price": 0.61487,
+    "dt": 1705929000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 162,
+    "price": 0.6114,
+    "dt": 1705931100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 166,
+    "limit": 100,
+    "price": 0.60104,
+    "dt": 1705950300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 166,
+    "price": 0.59622,
+    "dt": 1705950600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 165,
+    "limit": 100,
+    "price": 0.60289,
+    "dt": 1705954500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 165,
+    "price": 0.59799,
+    "dt": 1705963500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 166,
+    "limit": 100,
+    "price": 0.59981,
+    "dt": 1705964100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 166,
+    "price": 0.59482,
+    "dt": 1705965000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 165,
+    "limit": 100,
+    "price": 0.60404,
+    "dt": 1705975500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 165,
+    "price": 0.60072,
+    "dt": 1705996200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 172,
+    "limit": 100,
+    "price": 0.58111,
+    "dt": 1706023200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 172,
+    "price": 0.62671,
+    "dt": 1706033100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "limit": 100,
+    "price": 0.65691,
+    "dt": 1706115000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "price": 0.64703,
+    "dt": 1706117400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.64241,
+    "dt": 1706137500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.63366,
+    "dt": 1706147100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "limit": 100,
+    "price": 0.61313,
+    "dt": 1706193600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "price": 0.60238,
+    "dt": 1706197200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 165,
+    "limit": 100,
+    "price": 0.60588,
+    "dt": 1706205300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 165,
+    "price": 0.60654,
+    "dt": 1706218800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "limit": 100,
+    "price": 0.61055,
+    "dt": 1706235600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "price": 0.60509,
+    "dt": 1706236800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "limit": 100,
+    "price": 0.61096,
+    "dt": 1706238600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "price": 0.60537,
+    "dt": 1706252100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "limit": 100,
+    "price": 0.61258,
+    "dt": 1706256300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "price": 0.60657,
+    "dt": 1706263200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "limit": 100,
+    "price": 0.61346,
+    "dt": 1706265000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 163,
+    "price": 0.66034,
+    "dt": 1706289000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 154,
+    "limit": 100,
+    "price": 0.64548,
+    "dt": 1706365800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 154,
+    "price": 0.63778,
+    "dt": 1706367600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.6431,
+    "dt": 1706368800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.63796,
+    "dt": 1706370600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 156,
+    "limit": 100,
+    "price": 0.64087,
+    "dt": 1706372100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 156,
+    "price": 0.639,
+    "dt": 1706374200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.6423,
+    "dt": 1706380500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.63743,
+    "dt": 1706381100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.64304,
+    "dt": 1706382600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.64082,
+    "dt": 1706393700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.6437,
+    "dt": 1706394300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.63894,
+    "dt": 1706396400000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "limit": 100,
+    "price": 0.64207,
+    "dt": 1706399700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 155,
+    "price": 0.66719,
+    "dt": 1706427900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "limit": 100,
+    "price": 0.6746,
+    "dt": 1706438700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 148,
+    "price": 0.66971,
+    "dt": 1706439900000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "limit": 100,
+    "price": 0.64963,
+    "dt": 1706475000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "price": 0.64987,
+    "dt": 1706478300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "limit": 100,
+    "price": 0.6519,
+    "dt": 1706478600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "price": 0.64783,
+    "dt": 1706479500000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "limit": 100,
+    "price": 0.65172,
+    "dt": 1706485200000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 153,
+    "price": 0.6528,
+    "dt": 1706507100000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "limit": 100,
+    "price": 0.65569,
+    "dt": 1706521500000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "price": 0.654,
+    "dt": 1706521800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "limit": 100,
+    "price": 0.65621,
+    "dt": 1706522700000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "price": 0.65436,
+    "dt": 1706523300000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "limit": 100,
+    "price": 0.65688,
+    "dt": 1706524800000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "price": 0.6566,
+    "dt": 1706532600000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "limit": 100,
+    "price": 0.65599,
+    "dt": 1706532900000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 152,
+    "price": 0.65548,
+    "dt": 1706533800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 151,
+    "limit": 100,
+    "price": 0.65856,
+    "dt": 1706543100000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 151,
+    "price": 0.68384,
+    "dt": 1706572800000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 144,
+    "limit": 100,
+    "price": 0.69034,
+    "dt": 1706573400000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 144,
+    "price": 0.68471,
+    "dt": 1706575200000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 144,
+    "limit": 100,
+    "price": 0.68993,
+    "dt": 1706577600000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 144,
+    "price": 0.6866,
+    "dt": 1706579700000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 144,
+    "limit": 100,
+    "price": 0.6907,
+    "dt": 1706580000000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 144,
+    "price": 0.74466,
+    "dt": 1706616000000,
+    "type": "SELL"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "limit": 100,
+    "price": 0.73923,
+    "dt": 1706637300000,
+    "type": "BUY"
+  },
+  {
+    "symbol": "SEIUSDT",
+    "qty": 135,
+    "price": 0.73838,
+    "dt": 1706643000000,
+    "type": "SELL"
+  }
+]
