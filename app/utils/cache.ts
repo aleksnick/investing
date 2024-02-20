@@ -8,6 +8,7 @@ export const getCache = (dir: string, file: string): any => {
   const fullPath = getCachePath(dir, file);
 
   if (!fs.existsSync(fullPath)) {
+    console.error(`${fullPath} not found`);
     return [];
   }
 
@@ -21,10 +22,6 @@ export const getCache = (dir: string, file: string): any => {
 };
 
 export const setCache = <T>(dir: string, file: string, data: T) => {
-  if (process.env.FREEZE_CACHE === '1') {
-    return;
-  }
-
   const fullPath = getCachePath(dir, file);
 
   fs.writeFileSync(fullPath, JSON.stringify(data, null, 2));

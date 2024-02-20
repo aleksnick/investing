@@ -61,5 +61,10 @@ export const KlineChart = () => {
     };
   }, [data]);
 
-  return <div id="chart" style={{ width: 1024, height: 800 }} />;
+  return (
+    <>
+      <h1>{SYMBOL}</h1>
+      <div id="chart" style={{ width: 1200, height: 800 }} />
+    </>
+  );
 };
