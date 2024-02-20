@@ -11,7 +11,7 @@ import { WmaIndicator } from './indicators/WMA';
 import { VolIndicator } from './indicators/VOL';
 import { History } from './indicators/History';
 
-const SYMBOL = 'APTUSDT';
+const SYMBOL = 'SEIUSDT';
 const INTERVAL = '5';
 
 export const KlineChart = () => {

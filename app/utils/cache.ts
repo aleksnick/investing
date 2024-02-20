@@ -1,14 +1,24 @@
 'use server';
 
 import fs from 'fs';
+import path from 'path';
 
-export const getCache = (path: string): any => {
-  if (!fs.existsSync(path)) {
+export const getCache = (file: string): any => {
+  const fullPath = path.resolve(process.cwd(), file);
+  console.log(
+    'path',
+    __dirname,
+    process.cwd(),
+    fullPath,
+    fs.existsSync(fullPath),
+  );
+
+  if (!fs.existsSync(fullPath)) {
     return [];
   }
 
   try {
-    const file = fs.readFileSync(path).toString();
+    const file = fs.readFileSync(fullPath).toString();
 
     return JSON.parse(file);
   } catch {
