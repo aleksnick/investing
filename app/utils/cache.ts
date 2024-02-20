@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
+const getCachePath = (dir: string, file: string) =>
+  path.join(process.cwd(), process.env.EXEC_PATH || '', dir, file);
+
 export const getCache = (dir: string, file: string): any => {
-  const fullPath = path.join(process.cwd(), dir, file);
+  const fullPath = getCachePath(dir, file);
 
   if (!fs.existsSync(fullPath)) {
     return [];
@@ -18,7 +21,7 @@ export const getCache = (dir: string, file: string): any => {
 };
 
 export const setCache = <T>(dir: string, file: string, data: T) => {
-  const fullPath = path.join(process.cwd(), dir, file);
+  const fullPath = getCachePath(dir, file);
 
   fs.writeFileSync(fullPath, JSON.stringify(data, null, 2));
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import _ from 'lodash';
 import { init, Chart, dispose } from 'klinecharts';
 import { getUnixTime, subDays } from 'date-fns';
 import { kline } from '../../actions/kline';
@@ -37,7 +38,7 @@ export const KlineChart = () => {
 
   useEffect(() => {
     // initialize the chart
-    if (!data) {
+    if (!data || _.isEmpty(data)) {
       return () => null;
     }
 
