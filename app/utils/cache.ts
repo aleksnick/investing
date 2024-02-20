@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const getCachePath = (dir: string, file: string) =>
-  path.join(process.cwd(), process.env.EXEC_PATH || '', dir, file);
+  path.join(process.cwd(), 'app', dir, file);
 
 export const getCache = (dir: string, file: string): any => {
   const fullPath = getCachePath(dir, file);
