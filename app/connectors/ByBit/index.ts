@@ -1,6 +1,7 @@
 'use server';
 
 import _ from 'lodash';
+import chalk from 'chalk';
 import { getClient } from './client';
 import { mapKlineToChartData } from './utils';
 import {
@@ -32,8 +33,9 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
       });
 
       console.log(
-        formatUnix(Number.parseInt(kline.result.list[0][0])),
-        kline.result.list.length,
+        chalk.yellow(formatUnix(end)),
+        chalk.cyan(symbol),
+        chalk.yellow(kline.result.list.length),
       );
 
       return mapKlineToChartData(kline.result.list.reverse());
@@ -51,10 +53,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
       start: defaultStart,
       end: defaultEnd,
     }: KlineRequest) => {
-      let data = getCache(
-        'data',
-        `${symbol}-${interval}.json`,
-      ) as KlineChartData;
+      let data = getCache('data', `${symbol}_${interval}`) as KlineChartData;
       let loadedData = [] as KlineChartData;
       const cacheTimestamp = getDataTimestamp(data);
 
@@ -91,7 +90,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
       data = mergeData(data, loadedData);
 
       if (process.env.FREEZE_CACHE !== '1') {
-        setCache('data', `${symbol}-${interval}.json`, data);
+        setCache('data', `${symbol}_${interval}`, data);
       }
 
       data = data.filter((item) => {

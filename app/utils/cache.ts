@@ -1,24 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import { store } from './store';
 
 const getCachePath = (dir: string, file: string) =>
-  path.join(process.cwd(), 'app', dir, file);
+  path.join(process.cwd(), 'app', dir, `${file}.json`);
 
-export const getCache = (dir: string, file: string): any => {
-  const fullPath = getCachePath(dir, file);
-
-  if (!fs.existsSync(fullPath)) {
-    console.error(`${fullPath} not found`);
-    return [];
-  }
-
-  try {
-    const file = fs.readFileSync(fullPath, 'utf8');
-
-    return JSON.parse(file);
-  } catch {
-    return [];
-  }
+export const getCache = (dir: string, file: string): [] => {
+  return store[`${dir}_${file}`] || [];
 };
 
 export const setCache = <T>(dir: string, file: string, data: T) => {
