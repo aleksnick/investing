@@ -11,12 +11,9 @@ import {
 } from '../../utils/timestamp';
 import { getCache, setCache } from '../../utils/cache';
 import { mergeData } from '../../utils/array';
-import {
-  KlineChartData,
-  KlineRequest,
-  Interval,
-  ConnectorCreator,
-} from '../../types';
+import { KlineChartData, KlineRequest, ConnectorCreator } from '../../types';
+
+const LIMIT = 1000;
 
 export const ByBitConnectorCreator: ConnectorCreator = (config) => {
   const request = async ({ symbol, interval, start, end }: KlineRequest) => {
@@ -29,7 +26,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
         interval,
         start,
         end,
-        limit: 1000,
+        limit: LIMIT,
       });
 
       console.log(
@@ -76,7 +73,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
 
         loadedData = mergeData(partData, loadedData);
 
-        if (partData.length < 2) {
+        if (partData.length < LIMIT) {
           fulfilled = true;
         }
 

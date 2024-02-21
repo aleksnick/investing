@@ -12,7 +12,7 @@ import { WmaIndicator } from './indicators/WMA';
 import { VolIndicator } from './indicators/VOL';
 import { History } from './indicators/History';
 
-const SYMBOL = 'SEIUSDT';
+const SYMBOL = 'BTCUSDT';
 const INTERVAL = '5';
 
 export const KlineChart = () => {

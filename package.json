@@ -3,28 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "backtest": "time yarn ts-node ./scripts/backtest",
+    "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "update-cache": "time yarn ts-node ./scripts/update"
   },
   "dependencies": {
     "bybit-api": "^3.9.0",
     "chalk": "4.1.2",
     "date-fns": "^3.3.1",
+    "ejs": "^3.1.9",
     "highcharts": "^11.3.0",
     "klinecharts": "^9.7.2",
     "list-it": "^1.3.12",
     "lodash": "^4.17.21",
     "mathjs": "^12.3.2",
     "next": "14.1.0",
+    "prettier": "^3.2.5",
     "progress": "^2.0.3",
     "react": "^18",
     "react-dom": "^18",
     "technicalindicators": "^3.1.0"
   },
   "devDependencies": {
+    "@types/ejs": "^3",
     "@types/lodash": "^4",
     "@types/node": "^20",
     "@types/progress": "^2",

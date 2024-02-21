@@ -1,0 +1,13 @@
+<% dataFiles.forEach((file) => { %>
+  const data_<%- file %> = require('../data/<%- file %>') as [];<% }); %>
+
+<% historyFiles.forEach((file) => { %>
+  const history_<%- file %> = require('../history/<%- file %>') as [];<% }); %>
+
+export const store: Record<string, [] | null> = {
+  <% dataFiles.forEach((file) => { %>
+    data_<%- file %>,<% }); %>
+
+  <% historyFiles.forEach((file) => { %>
+    history_<%- file %>,<% }); %>
+};
