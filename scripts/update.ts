@@ -7,6 +7,7 @@ import { ByBitConnectorCreator } from '../app/connectors/ByBit';
 
 const start = getUnixTime(subDays(new Date(), 120)) * 1000;
 const end = getUnixTime(new Date()) * 1000;
+const INTERVAL = '5';
 
 const LIST = [
   'BTCUSDT',
@@ -22,27 +23,11 @@ const LIST = [
   'TIAUSDT',
 ];
 
-const IGNORE_FILES = ['.gitignore'];
-
-const filterFiles = (files: string[]) =>
-  files
-    .filter((file) => !IGNORE_FILES.includes(file))
-    .map((file) => file.split('.')[0]);
-
 const render = async () => {
-  const dataFiles = filterFiles(
-    fs.readdirSync(path.resolve(process.cwd(), 'app/data')),
-  );
-
-  const historyFiles = filterFiles(
-    fs.readdirSync(path.resolve(process.cwd(), 'app/history')),
-  );
-
   const content = await ejs.renderFile(
-    path.resolve(process.cwd(), 'app/templates/store.ejs'),
+    path.resolve(process.cwd(), 'app/templates/data.ejs'),
     {
-      dataFiles,
-      historyFiles,
+      dataFiles: LIST.map((symbol) => `${symbol}_${INTERVAL}`),
     },
   );
 
@@ -53,7 +38,7 @@ const render = async () => {
   });
 
   fs.writeFileSync(
-    path.resolve(process.cwd(), 'app/utils/store.ts'),
+    path.resolve(process.cwd(), 'app/utils/data.ts'),
     formatted,
     'utf-8',
   );
@@ -68,7 +53,7 @@ const update = async () => {
   for await (const symbol of LIST) {
     await byBitConnector.kline({
       symbol,
-      interval: '5',
+      interval: INTERVAL,
       start,
       end,
     });

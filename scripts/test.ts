@@ -14,28 +14,37 @@ const client = new RestClientV5({
 });
 
 const run = async () => {
-  const book = await client.getOrderbook({
-    category: 'linear',
-    symbol: 'SEIUSDT',
-  });
+  // const book = await client.getOrderbook({
+  //   category: 'linear',
+  //   symbol: 'SEIUSDT',
+  // });
 
   // const info = await client.getPositionInfo({
   //   category: 'linear',
   // });
 
-  const kline = await client.getKline({
+  const order = await client.submitOrder({
     category: 'linear',
     symbol: 'SEIUSDT',
-    interval: '15',
-    start: getUnixTime(addDays(new Date(), -2)) * 1000,
-    end: getUnixTime(new Date()) * 1000,
+    side: 'Buy',
+    orderType: 'Market',
+    qty: '0.1',
+    price: '15600',
+    timeInForce: 'PostOnly',
+    orderLinkId: 'spot-test-postonly',
+    orderFilter: 'Order',
   });
 
-  console.log('book', book);
-  // console.log('info', info);
-  console.log('kline', kline);
+  // const kline = await client.getKline({
+  //   category: 'linear',
+  //   symbol: 'SEIUSDT',
+  //   interval: '15',
+  //   start: getUnixTime(addDays(new Date(), -2)) * 1000,
+  //   end: getUnixTime(new Date()) * 1000,
+  // });
 
-  fs.writeFileSync('kline', JSON.stringify(kline, null, 2));
+  // console.log('info', info);
+  // fs.writeFileSync('kline', JSON.stringify(kline, null, 2));
 };
 
 run();

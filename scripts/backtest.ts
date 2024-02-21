@@ -5,7 +5,7 @@ import { testing } from '../app/utils/testing';
 import { MaStrategyCreator } from '../app/strategy/ma';
 import { TestConfig } from '../app/types';
 
-const start = getUnixTime(new Date('2023-12-01')) * 1000;
+const start = getUnixTime(new Date('2023-12-25')) * 1000;
 const end = getUnixTime(new Date('2024-01-31')) * 1000;
 
 const TEST_CONFIG: TestConfig = [
@@ -18,21 +18,22 @@ const TEST_CONFIG: TestConfig = [
     strategyConfig: {
       PERIODS: [3, 99],
       LIMIT: 100,
-      TAKE_PROFIT: 15,
+      TAKE_PROFIT: 0,
     },
   },
-  {
-    options: {
-      symbol: 'AVAXUSDT',
-      start,
-      end,
-    },
-    strategyConfig: {
-      PERIODS: [3, 99],
-      LIMIT: 100,
-      TAKE_PROFIT: 15,
-    },
-  },];
+  // {
+  //   options: {
+  //     symbol: 'AVAXUSDT',
+  //     start,
+  //     end,
+  //   },
+  //   strategyConfig: {
+  //     PERIODS: [3, 99],
+  //     LIMIT: 100,
+  //     TAKE_PROFIT: 15,
+  //   },
+  // },
+];
 
 const HEADERS = [
   chalk.blue('id'),
@@ -61,7 +62,7 @@ const backTest = async () => {
       chalk.red(`${stat.minAmount.toFixed(2)}$`),
       chalk.cyan(stat.orders),
     ]);
-  
+
     num++;
   }
 

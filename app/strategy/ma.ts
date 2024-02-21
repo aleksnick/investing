@@ -10,7 +10,7 @@ const DEFAULT_CONFIG = {
 };
 
 export const MaStrategyCreator: StrategyCreator = (baseConfig) => {
-  let ALLLOW_BUY = false;
+  let ALLLOW_BUY = true;
 
   const config = {
     ...DEFAULT_CONFIG,
@@ -68,6 +68,7 @@ export const MaStrategyCreator: StrategyCreator = (baseConfig) => {
 
     if (
       currentOrder &&
+      config.TAKE_PROFIT > 0 &&
       diffRel(currentOrder.price, price) > config.TAKE_PROFIT
     ) {
       await connector.cancelOrder({
