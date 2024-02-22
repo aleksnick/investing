@@ -20,8 +20,8 @@ export const testing: TestingBox = async (
     secret: '',
   });
 
-  for (let dt = start!; dt <= end; dt += INC) {
-    times.push(dt);
+  for (let timestamp = start!; timestamp <= end; timestamp += INC) {
+    times.push(timestamp);
   }
 
   const bar = new ProgressBar(':bar :id :date :amount :minamount :orders', {
@@ -29,16 +29,17 @@ export const testing: TestingBox = async (
     width: 20,
   });
 
-  for await (const dt of times) {
-    await strategy(symbol, dt, testConnector);
-    let stat = testConnector.getStat?.();
+  for await (const timestamp of times) {
+    await testConnector.checkTpl?.(symbol, timestamp);
+    await strategy(symbol, timestamp, testConnector);
+    const stat = testConnector.getStat?.();
 
     bar.tick({
       id: chalk.blue(`#${id}`),
       orders: chalk.cyan(stat?.orders),
-      amount: chalk.green(`${stat!.amount.toFixed(2)}$`),
-      minamount: chalk.red(`${stat!.minAmount.toFixed(2)}$`),
-      date: chalk.yellow(formatUnix(dt)),
+      amount: chalk.green(`${stat?.amount.toFixed(2)}$`),
+      minamount: chalk.red(`${stat?.minAmount.toFixed(2)}$`),
+      date: chalk.yellow(formatUnix(timestamp)),
     });
   }
 

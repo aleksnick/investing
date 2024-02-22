@@ -11,15 +11,16 @@ import {
   Order,
   OrderLogData,
   KlineChartData,
+  Tpl,
 } from '../../types';
-
-const FEE = 0.0005;
 
 export const TestConnectorCreator: ConnectorCreator = (config) => {
   let CURRENT_ORDER: Order | null = null;
+  let ORIGINAL_QTY = 0;
   let AMOUNT = 100;
   let MIN_AMOUT = AMOUNT;
   let ORDERS = 0;
+  let TPL: Tpl[] = [];
   const ORDER_LOG: OrderLogData = [];
   let LOADED_DATA: KlineChartData = [];
 
@@ -37,16 +38,18 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
     LOADED_DATA = data;
   };
 
+  const kline = async (options: KlineRequest) => {
+    if (LOADED_DATA.length < 1) {
+      await loadData(options);
+    }
+
+    const res = LOADED_DATA.filter((item) => item.timestamp <= options.end);
+
+    return res;
+  };
+
   return {
-    kline: async (options: KlineRequest) => {
-      if (LOADED_DATA.length < 1) {
-        await loadData(options);
-      }
-
-      const res = LOADED_DATA.filter((item) => item.timestamp <= options.end);
-
-      return res;
-    },
+    kline,
     getStat: () => {
       return {
         amount: AMOUNT,
@@ -58,12 +61,69 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
       setCache('history', `${symbol}_${id}`, ORDER_LOG);
     },
     getOrder: () => {
-      return new Promise((resolve) => resolve(CURRENT_ORDER));
+      return new Promise((resolve) =>
+        resolve(CURRENT_ORDER ? [CURRENT_ORDER] : null),
+      );
     },
-    placeOrder: (order) => {
+    checkTpl: async (symbol: string, timestamp: number) => {
+      if (
+        _.isEmpty(TPL) ||
+        !ORIGINAL_QTY ||
+        !CURRENT_ORDER ||
+        _.isEmpty(CURRENT_ORDER)
+      ) {
+        return;
+      }
+
+      let data = await kline({
+        symbol,
+        interval: '5',
+        end: timestamp,
+      });
+
+      if (_.isEmpty(data)) {
+        return;
+      }
+
+      const price = data.pop()?.high;
+
+      if (!price) {
+        return;
+      }
+
+      TPL = TPL.filter(({ done }) => !done).map((tpl, i) => {
+        if (!CURRENT_ORDER || price < CURRENT_ORDER.price * (1 + tpl.profit)) {
+          return tpl;
+        }
+
+        const qty = ORIGINAL_QTY * tpl.rate;
+
+        const summ = evaluate(`(${price} - ${CURRENT_ORDER.price}) * ${qty}`);
+
+        AMOUNT = evaluate(`${AMOUNT} + ${summ}`);
+        CURRENT_ORDER.qty = evaluate(`${CURRENT_ORDER.qty} - ${qty}`);
+
+        ORDER_LOG.push({
+          ...CURRENT_ORDER,
+          timestamp,
+          qty,
+          price,
+          type: 'SELL',
+        });
+
+        return {
+          ...tpl,
+          done: true,
+        };
+      });
+    },
+    placeOrder: ({ tpl, ...order }) => {
+      TPL = tpl;
+
       CURRENT_ORDER = {
         ...order,
       };
+      ORIGINAL_QTY = order.qty;
 
       ORDER_LOG.push({
         ...order,
@@ -73,20 +133,27 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
       return new Promise((resolve) => resolve(true));
     },
     cancelOrder: (order) => {
+      if (!CURRENT_ORDER || _.isEmpty(CURRENT_ORDER)) {
+        return new Promise((resolve) => resolve(false));
+      }
+
       const summ = evaluate(
-        `(${order.price} - (${CURRENT_ORDER?.price} * (${1 + FEE}))) * ${
-          CURRENT_ORDER?.qty
-        }`,
+        `(${order.price} - ${CURRENT_ORDER.price}) * ${CURRENT_ORDER.qty}`,
       );
 
       AMOUNT = evaluate(`${AMOUNT} + ${summ}`);
+
       MIN_AMOUT = _.min([MIN_AMOUT, AMOUNT]) || MIN_AMOUT;
       ORDERS++;
-      CURRENT_ORDER = null;
       ORDER_LOG.push({
+        ...CURRENT_ORDER,
         ...order,
         type: 'SELL',
       });
+
+      TPL = [];
+      ORIGINAL_QTY = 0;
+      CURRENT_ORDER = null;
 
       return new Promise((resolve) => resolve(true));
     },

@@ -32,7 +32,17 @@ export type StrategyCreator = (config: StrategyConfig) => Strategy;
 
 export type TestingOptions = Omit<KlineRequest, 'interval'>;
 
-export type StrategyConfig = Record<string, string | number | number[]>;
+export interface Tpl {
+  profit: number;
+  rate: number;
+  done?: boolean;
+}
+
+type TplConfig = {
+  tpl: Tpl[];
+};
+
+export type StrategyConfig = Record<string, any> & TplConfig;
 
 export type TestingBox = (
   id: string,
@@ -49,7 +59,6 @@ export type TestConfig = {
 export type Order = {
   symbol: string;
   qty: number;
-  limit?: number;
   price: number;
   timestamp: number;
 };
@@ -73,11 +82,15 @@ export interface ConnectorConfig {
   secret: string;
 }
 
+type PlaceOrderOptions = Order & TplConfig;
+type CancelOrderOptions = Omit<Order, 'qty'>;
+
 export interface Connector {
   getStat: () => ConnectorStat;
   saveStat?: (symbol: string, id: string) => void;
+  checkTpl?: (symbol: string, timestamp: number) => void;
   kline: (options: KlineRequest) => Promise<KlineChartData>;
-  getOrder: (symbol: string) => Promise<Order | null>;
-  placeOrder: (order: Order) => Promise<boolean>;
-  cancelOrder: (order: Order) => Promise<boolean>;
+  getOrder: (symbol: string) => Promise<Order[] | null>;
+  placeOrder: (options: PlaceOrderOptions) => Promise<boolean>;
+  cancelOrder: (options: CancelOrderOptions) => Promise<boolean>;
 }

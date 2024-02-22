@@ -5,34 +5,64 @@ import { testing } from '../app/utils/testing';
 import { MaStrategyCreator } from '../app/strategy/ma';
 import { TestConfig } from '../app/types';
 
-const start = getUnixTime(new Date('2023-12-25')) * 1000;
-const end = getUnixTime(new Date('2024-01-31')) * 1000;
+const start = getUnixTime(new Date('2024-01-23')) * 1000;
+const end = getUnixTime(new Date('2024-02-23')) * 1000;
 
 const TEST_CONFIG: TestConfig = [
-  {
-    options: {
-      symbol: 'TIAUSDT',
-      start,
-      end,
-    },
-    strategyConfig: {
-      PERIODS: [3, 99],
-      LIMIT: 100,
-      TAKE_PROFIT: 0,
-    },
-  },
   // {
   //   options: {
-  //     symbol: 'AVAXUSDT',
+  //     symbol: 'SEIUSDT',
   //     start,
   //     end,
   //   },
   //   strategyConfig: {
   //     PERIODS: [3, 99],
   //     LIMIT: 100,
-  //     TAKE_PROFIT: 15,
+  //     tpl: [
+  //       {
+  //         rate: 0.25,
+  //         profit: 0.03,
+  //       },
+  //       {
+  //         rate: 0.25,
+  //         profit: 0.7,
+  //       },
+  //       {
+  //         rate: 0.25,
+  //         profit: 0.13,
+  //       },
+  //       {
+  //         rate: 0.24,
+  //         profit: 0.17,
+  //       },
+  //     ],
   //   },
   // },
+  {
+    options: {
+      symbol: 'SEIUSDT',
+      start,
+      end,
+    },
+    strategyConfig: {
+      PERIODS: [3, 99],
+      LIMIT: 100,
+      tpl: [
+        {
+          rate: 0.33,
+          profit: 0.7,
+        },
+        {
+          rate: 0.33,
+          profit: 0.11,
+        },
+        {
+          rate: 0.33,
+          profit: 0.13,
+        },
+      ],
+    },
+  },
 ];
 
 const HEADERS = [

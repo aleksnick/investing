@@ -23,17 +23,24 @@ const run = async () => {
   //   category: 'linear',
   // });
 
-  const order = await client.submitOrder({
-    category: 'linear',
+  // const order = await client.submitOrder({
+  //   category: 'linear',
+  //   symbol: 'SEIUSDT',
+  //   side: 'Buy',
+  //   orderType: 'Market',
+  //   qty: '0.1',
+  //   price: '15600',
+  //   timeInForce: 'PostOnly',
+  //   orderLinkId: 'spot-test-postonly',
+  //   orderFilter: 'Order',
+  // });
+
+  const orders = await client.getActiveOrders({
     symbol: 'SEIUSDT',
-    side: 'Buy',
-    orderType: 'Market',
-    qty: '0.1',
-    price: '15600',
-    timeInForce: 'PostOnly',
-    orderLinkId: 'spot-test-postonly',
-    orderFilter: 'Order',
+    category: 'linear',
   });
+
+  console.log('orders', JSON.stringify(orders, null, 2));
 
   // const kline = await client.getKline({
   //   category: 'linear',
