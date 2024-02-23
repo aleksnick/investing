@@ -58,7 +58,7 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
       };
     },
     saveStat: (symbol: string, id: string) => {
-      setCache('history', `${symbol}_${id}`, ORDER_LOG);
+      setCache('backtest', `${symbol}_${id}`, ORDER_LOG);
     },
     getOrder: () => {
       return new Promise((resolve) =>

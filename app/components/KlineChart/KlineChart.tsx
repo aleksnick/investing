@@ -10,7 +10,7 @@ import { MaIndicator } from './indicators/MA';
 import { EmaIndicator } from './indicators/EMA';
 import { WmaIndicator } from './indicators/WMA';
 import { VolIndicator } from './indicators/VOL';
-import { History } from './indicators/History';
+import { Backtest } from './indicators/Backtest';
 
 const SYMBOL = 'SEIUSDT';
 const INTERVAL = '5';
@@ -51,7 +51,7 @@ export const KlineChart = () => {
     MaIndicator(chart, data, [3, 99]);
     // EmaIndicator(chart, data, [3, 30]);
     // WmaIndicator(chart, data, [3, 40]);
-    History(chart, SYMBOL, '1');
+    Backtest(chart, SYMBOL, '1');
 
     // chart.createIndicator('SAR', true, { id: 'candle_pane' });
 

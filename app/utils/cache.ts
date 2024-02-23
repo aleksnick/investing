@@ -6,7 +6,7 @@ const getCachePath = (dir: string, file: string) =>
   path.join(process.cwd(), 'app', dir, `${file}.json`);
 
 export const getCache = (dir: string, file: string): [] => {
-  if (dir !== 'history') {
+  if (dir !== 'backtest') {
     return data[`${dir}_${file}`] || [];
   }
 

@@ -2,51 +2,45 @@ const ListIt = require('list-it');
 import chalk from 'chalk';
 import { getUnixTime } from 'date-fns';
 import { testing } from '../app/utils/testing';
-import { MaStrategyCreator } from '../app/strategy/ma';
+import { MaStrategyCreator, config } from '../app/strategy/MA';
 import { TestConfig } from '../app/types';
 
-const start = getUnixTime(new Date('2024-01-23')) * 1000;
-const end = getUnixTime(new Date('2024-02-23')) * 1000;
+const start = getUnixTime(new Date('2024-01-01')) * 1000;
+const end = getUnixTime(new Date('2024-01-31')) * 1000;
 
 const TEST_CONFIG: TestConfig = [
-  // {
-  //   options: {
-  //     symbol: 'SEIUSDT',
-  //     start,
-  //     end,
-  //   },
-  //   strategyConfig: {
-  //     PERIODS: [3, 99],
-  //     LIMIT: 100,
-  //     tpl: [
-  //       {
-  //         rate: 0.25,
-  //         profit: 0.03,
-  //       },
-  //       {
-  //         rate: 0.25,
-  //         profit: 0.7,
-  //       },
-  //       {
-  //         rate: 0.25,
-  //         profit: 0.13,
-  //       },
-  //       {
-  //         rate: 0.24,
-  //         profit: 0.17,
-  //       },
-  //     ],
-  //   },
-  // },
   {
     options: {
-      symbol: 'SEIUSDT',
+      symbol: 'SUIUSDT',
       start,
       end,
     },
     strategyConfig: {
-      PERIODS: [3, 99],
-      LIMIT: 100,
+      ...config,
+      tpl: [
+        {
+          rate: 0.33,
+          profit: 0.5,
+        },
+        {
+          rate: 0.33,
+          profit: 0.9,
+        },
+        {
+          rate: 0.33,
+          profit: 0.13,
+        },
+      ],
+    },
+  },
+  {
+    options: {
+      symbol: 'SUIUSDT',
+      start,
+      end,
+    },
+    strategyConfig: {
+      ...config,
       tpl: [
         {
           rate: 0.33,
