@@ -9,16 +9,16 @@ export const config: BotConfig = [
       LIMIT: 200,
       tpl: [
         {
-          rate: 0.33,
-          profit: 0.03,
+          rate: 0.3,
+          profit: 0.02,
         },
         {
-          rate: 0.33,
-          profit: 0.7,
+          rate: 0.3,
+          profit: 0.04,
         },
         {
-          rate: 0.33,
-          profit: 0.15,
+          rate: 0.3,
+          profit: 0.8,
         },
       ],
     }),

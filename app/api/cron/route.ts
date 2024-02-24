@@ -1,8 +1,10 @@
 import { getUnixTime } from 'date-fns';
-import { ByBitConnectorCreator } from '../connectors/ByBit';
-import { config } from '../bots/config';
+import { ByBitConnectorCreator } from '../../connectors/ByBit';
+import { config } from '../../bots/config';
 
-const bot = async () => {
+export const runtime = 'edge';
+
+export async function GET() {
   const byBitConnector = ByBitConnectorCreator({
     key: '',
     secret: '',
@@ -17,6 +19,6 @@ const bot = async () => {
   }
 
   console.log('done');
-};
 
-export default bot;
+  return Response.json({ res: 'done' });
+}

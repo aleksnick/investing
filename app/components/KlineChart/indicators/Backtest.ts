@@ -15,9 +15,12 @@ export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
     name: 'Backtest',
     figures: [{ key: 'backtest' }],
     calc: (kLineDataList) => {
-      return kLineDataList.map((kLineData) => {
+      return kLineDataList.map((kLineData, ind) => {
         const order = backtestData.find(
-          (item) => item.timestamp === kLineData.timestamp,
+          (item) =>
+            ind > 0 &&
+            item.timestamp > ind &&
+            item.timestamp <= kLineData.timestamp,
         );
 
         if (!order) {
