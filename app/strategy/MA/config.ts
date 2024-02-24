@@ -3,16 +3,16 @@ export const config = {
   LIMIT: 100,
   tpl: [
     {
-      rate: 0.33,
-      profit: 0.7,
+      rate: 0.3,
+      profit: 0.05,
     },
     {
-      rate: 0.33,
-      profit: 0.11,
+      rate: 0.3,
+      profit: 0.1,
     },
     {
-      rate: 0.33,
-      profit: 0.13,
+      rate: 0.3,
+      profit: 0.15,
     },
   ],
 };

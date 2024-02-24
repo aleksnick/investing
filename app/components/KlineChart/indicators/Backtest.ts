@@ -5,18 +5,18 @@ import { registerIndicator, Chart } from 'klinecharts';
 import { backtest } from '../../../actions/backtest';
 
 export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
-  const historyData = await backtest(id, symbol);
+  const backtestData = await backtest(id, symbol);
 
-  if (_.isEmpty(historyData)) {
+  if (_.isEmpty(backtestData)) {
     return;
   }
 
   registerIndicator({
-    name: 'History',
-    figures: [{ key: 'history' }],
+    name: 'Backtest',
+    figures: [{ key: 'backtest' }],
     calc: (kLineDataList) => {
       return kLineDataList.map((kLineData) => {
-        const order = historyData.find(
+        const order = backtestData.find(
           (item) => item.timestamp === kLineData.timestamp,
         );
 
@@ -26,7 +26,7 @@ export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
 
         return {
           text: order.type === 'BUY' ? '🍏' : '🍎',
-          history: order.price,
+          backtest: order.price,
         };
       });
     },
@@ -39,9 +39,9 @@ export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
       for (let i = from; i < to; i++) {
         const data = result[i];
 
-        if (data?.history) {
+        if (data?.backtest) {
           const x = xAxis.convertToPixel(i);
-          const y = yAxis.convertToPixel(data.history);
+          const y = yAxis.convertToPixel(data.backtest);
           ctx.fillText(data.text, x, y);
         }
       }
@@ -49,5 +49,5 @@ export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
     },
   });
 
-  chart.createIndicator('History', true, { id: 'candle_pane' });
+  chart.createIndicator('Backtest', true, { id: 'candle_pane' });
 };

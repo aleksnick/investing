@@ -26,8 +26,8 @@ export const MaStrategyCreator: StrategyCreator = (baseConfig) => {
       return;
     }
 
-    const order = await connector.getOrder(symbol);
-    const orderExists = !_.isEmpty(order);
+    const position = await connector.getPosition(symbol);
+    const positionExists = !_.isEmpty(position);
 
     const closesPrices = data.map((item) => item.close);
 
@@ -45,20 +45,24 @@ export const MaStrategyCreator: StrategyCreator = (baseConfig) => {
       return;
     }
 
-    if (!orderExists && Line1 > Line2) {
+    // console.log('ma', Line1, Line2, positionExists);
+
+    if (!positionExists && Line1 > Line2) {
       const qty = config.LIMIT / price;
 
-      await connector.placeOrder({
-        symbol,
-        qty,
-        price,
-        timestamp,
-        tpl: config.tpl,
-      });
+      await connector.placeOrder(
+        {
+          symbol,
+          qty,
+          price,
+          timestamp,
+        },
+        config.tpl,
+      );
     }
 
-    if (orderExists && Line1 < Line2) {
-      await connector.cancelOrder({
+    if (positionExists && Line1 < Line2) {
+      await connector.closePosition({
         symbol,
         price,
         timestamp,

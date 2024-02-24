@@ -6,16 +6,16 @@ import { ByBitConnectorCreator } from '../ByBit';
 import { getUnixTime } from 'date-fns';
 import { setCache } from '../../utils/cache';
 import {
-  ConnectorCreator,
-  KlineRequest,
+  TestConnectorCreator as TCC,
+  Kline,
   Order,
   OrderLogData,
   KlineChartData,
   Tpl,
 } from '../../types';
 
-export const TestConnectorCreator: ConnectorCreator = (config) => {
-  let CURRENT_ORDER: Order | null = null;
+export const TestConnectorCreator: TCC = (config) => {
+  let CURRENT_POSITION: Order | null = null;
   let ORIGINAL_QTY = 0;
   let AMOUNT = 100;
   let MIN_AMOUT = AMOUNT;
@@ -26,7 +26,7 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
 
   const byBitConnector = ByBitConnectorCreator(config);
 
-  const loadData = async (options: KlineRequest) => {
+  const loadData: Kline = async (options) => {
     const end = getUnixTime(new Date()) * 1000;
 
     const data = await byBitConnector.kline({
@@ -36,9 +36,11 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
     });
 
     LOADED_DATA = data;
+
+    return LOADED_DATA;
   };
 
-  const kline = async (options: KlineRequest) => {
+  const kline: Kline = async (options) => {
     if (LOADED_DATA.length < 1) {
       await loadData(options);
     }
@@ -60,17 +62,17 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
     saveStat: (symbol: string, id: string) => {
       setCache('backtest', `${symbol}_${id}`, ORDER_LOG);
     },
-    getOrder: () => {
+    getPosition: () => {
       return new Promise((resolve) =>
-        resolve(CURRENT_ORDER ? [CURRENT_ORDER] : null),
+        resolve(CURRENT_POSITION || null),
       );
     },
     checkTpl: async (symbol: string, timestamp: number) => {
       if (
         _.isEmpty(TPL) ||
         !ORIGINAL_QTY ||
-        !CURRENT_ORDER ||
-        _.isEmpty(CURRENT_ORDER)
+        !CURRENT_POSITION ||
+        _.isEmpty(CURRENT_POSITION)
       ) {
         return;
       }
@@ -92,19 +94,19 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
       }
 
       TPL = TPL.filter(({ done }) => !done).map((tpl, i) => {
-        if (!CURRENT_ORDER || price < CURRENT_ORDER.price * (1 + tpl.profit)) {
+        if (!CURRENT_POSITION || price < CURRENT_POSITION.price * (1 + tpl.profit)) {
           return tpl;
         }
 
         const qty = ORIGINAL_QTY * tpl.rate;
 
-        const summ = evaluate(`(${price} - ${CURRENT_ORDER.price}) * ${qty}`);
+        const summ = evaluate(`(${price} - ${CURRENT_POSITION.price}) * ${qty}`);
 
         AMOUNT = evaluate(`${AMOUNT} + ${summ}`);
-        CURRENT_ORDER.qty = evaluate(`${CURRENT_ORDER.qty} - ${qty}`);
+        CURRENT_POSITION.qty = evaluate(`${CURRENT_POSITION.qty} - ${qty}`);
 
         ORDER_LOG.push({
-          ...CURRENT_ORDER,
+          ...CURRENT_POSITION,
           timestamp,
           qty,
           price,
@@ -117,10 +119,10 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
         };
       });
     },
-    placeOrder: ({ tpl, ...order }) => {
+    placeOrder: (order, tpl) => {
       TPL = tpl;
 
-      CURRENT_ORDER = {
+      CURRENT_POSITION = {
         ...order,
       };
       ORIGINAL_QTY = order.qty;
@@ -132,13 +134,13 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
 
       return new Promise((resolve) => resolve(true));
     },
-    cancelOrder: (order) => {
-      if (!CURRENT_ORDER || _.isEmpty(CURRENT_ORDER)) {
+    closePosition: (order) => {
+      if (!CURRENT_POSITION || _.isEmpty(CURRENT_POSITION)) {
         return new Promise((resolve) => resolve(false));
       }
 
       const summ = evaluate(
-        `(${order.price} - ${CURRENT_ORDER.price}) * ${CURRENT_ORDER.qty}`,
+        `(${order.price} - ${CURRENT_POSITION.price}) * ${CURRENT_POSITION.qty}`,
       );
 
       AMOUNT = evaluate(`${AMOUNT} + ${summ}`);
@@ -146,14 +148,14 @@ export const TestConnectorCreator: ConnectorCreator = (config) => {
       MIN_AMOUT = _.min([MIN_AMOUT, AMOUNT]) || MIN_AMOUT;
       ORDERS++;
       ORDER_LOG.push({
-        ...CURRENT_ORDER,
+        ...CURRENT_POSITION,
         ...order,
         type: 'SELL',
       });
 
       TPL = [];
       ORIGINAL_QTY = 0;
-      CURRENT_ORDER = null;
+      CURRENT_POSITION = null;
 
       return new Promise((resolve) => resolve(true));
     },

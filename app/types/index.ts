@@ -63,6 +63,12 @@ export type Order = {
   timestamp: number;
 };
 
+export type Position = {
+  symbol: string;
+  qty: number;
+  price: number;
+}
+
 export type OrderLog = Order & {
   type: 'BUY' | 'SELL';
 };
@@ -76,21 +82,34 @@ export interface ConnectorStat {
 }
 
 export type ConnectorCreator = (config: ConnectorConfig) => Connector;
+export type TestConnectorCreator = (config: ConnectorConfig) => TestConnector;
 
 export interface ConnectorConfig {
   key: string;
   secret: string;
 }
 
-type PlaceOrderOptions = Order & TplConfig;
-type CancelOrderOptions = Omit<Order, 'qty'>;
+interface Bot {
+  symbol: string;
+  strategy: Strategy;
+};
+
+export type BotConfig = Bot[];
+
+type GetPosition = (symbol: string) => Promise<Position | null>;
+type PlaceOrder = (order: Order, tpl: Tpl[]) => Promise<boolean>;
+type ClosePosition = (order: Omit<Order, 'qty'>) => Promise<boolean>;
+export type Kline = (options: KlineRequest) => Promise<KlineChartData>;
 
 export interface Connector {
+  kline: Kline;
+  getPosition: GetPosition;
+  placeOrder: PlaceOrder;
+  closePosition: ClosePosition;
+}
+
+export interface TestConnector extends Connector {
   getStat: () => ConnectorStat;
-  saveStat?: (symbol: string, id: string) => void;
-  checkTpl?: (symbol: string, timestamp: number) => void;
-  kline: (options: KlineRequest) => Promise<KlineChartData>;
-  getOrder: (symbol: string) => Promise<Order[] | null>;
-  placeOrder: (options: PlaceOrderOptions) => Promise<boolean>;
-  cancelOrder: (options: CancelOrderOptions) => Promise<boolean>;
+  saveStat: (symbol: string, id: string) => void;
+  checkTpl: (symbol: string, timestamp: number) => void;
 }

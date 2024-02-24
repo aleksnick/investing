@@ -101,21 +101,81 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
 
       return data;
     },
-    getStat: () => {
-      return {
-        amount: 0,
-        minAmount: 0,
-        orders: 0,
-      };
+    getPosition: async (symbol) => {
+      const client = getClient(config);
+
+      const positionRes = await client.getPositionInfo({
+        symbol,
+        category: 'linear',
+      });
+
+      console.log('position', JSON.stringify(positionRes, null, 2));
+
+      if (positionRes.retCode !== 0) {
+        return null;
+      }
+
+      return positionRes.result.list.map((item) => ({
+        symbol: item.symbol,
+        price: Number.parseFloat(item.avgPrice),
+        qty: Number.parseFloat(item.size),
+      }))?.[0];
     },
-    getOrder: () => {
-      return new Promise(() => null);
+    placeOrder: async ({ symbol, price, qty }, TPL) => {
+      const client = getClient(config);
+
+      const orderRes = await client.submitOrder({
+        category: 'linear',
+        symbol: symbol,
+        side: 'Buy',
+        orderType: 'Market',
+        qty: qty.toFixed(0),
+        orderFilter: 'Order',
+      });
+
+      console.log('placeOrder', JSON.stringify(orderRes, null, 2));
+
+      if (orderRes.retCode !== 0) {
+        return false;
+      }
+
+      for await (const tpl of TPL) {
+        const tplSize = qty * tpl.rate;
+
+        const tplRes = await client.setTradingStop({
+          category: 'linear',
+          symbol: 'SUIUSDT',
+          tpSize: tplSize.toFixed(0),
+          tpslMode: 'Partial',
+          takeProfit: `${price * (100 + tpl.profit)}`,
+          tpOrderType: 'Market',
+          positionIdx: 0,
+        });
+
+        console.log('tpl', tpl, JSON.stringify(tplRes, null, 2));
+      }
+
+      return true;
     },
-    placeOrder: (order) => {
-      return new Promise(() => true);
-    },
-    cancelOrder: () => {
-      return new Promise(() => true);
+    closePosition: async ({ symbol }) => {
+      const client = getClient(config);
+
+      const closeRes = await client.submitOrder({
+        category: 'linear',
+        symbol,
+        side: 'Sell',
+        orderType: 'Market',
+        qty: '0',
+        reduceOnly: true,
+      });
+
+      console.log('closePosition', closeRes);
+
+      if (closeRes.retCode !== 0) {
+        return false;
+      }
+
+      return true;
     },
   };
 };

@@ -13,45 +13,112 @@ const client = new RestClientV5({
   testnet: useTestnet,
 });
 
-const run = async () => {
-  // const book = await client.getOrderbook({
-  //   category: 'linear',
-  //   symbol: 'SEIUSDT',
-  // });
+const SYMBOL = 'SUIUSDT';
 
+const TPL = [
+  {
+    rate: 0.3,
+    profit: 0.07,
+  },
+  {
+    rate: 0.4,
+    profit: 0.11,
+  },
+];
+
+const LIMIT = 200;
+const PRICE = 1.67;
+
+const placeOrder = async () => {
+  const QTY = LIMIT / PRICE;
+
+  console.log(QTY);
+
+  const resMain = await client.submitOrder({
+    category: 'linear',
+    symbol: SYMBOL,
+    side: 'Buy',
+    orderType: 'Market',
+    qty: QTY.toFixed(0),
+    orderFilter: 'Order',
+  });
+
+  console.log(resMain);
+
+  if (!resMain.result?.orderId) {
+    return;
+  }
+
+  // return;
+
+  for await (const tpl of TPL) {
+    const qty = QTY * tpl.rate;
+    const summ = qty * PRICE;
+
+    const res = await client.setTradingStop({
+      category: 'linear',
+      symbol: SYMBOL,
+      tpSize: qty.toFixed(0),
+      tpslMode: 'Partial',
+      takeProfit: `${PRICE * (1 + tpl.profit)}`,
+      tpOrderType: 'Market',
+      positionIdx: 0,
+      // orderFilter: 'tpslOrder',
+    });
+
+    console.log(JSON.stringify(res, null, 2));
+  }
+};
+
+const getOrders = async () => {
   // const info = await client.getPositionInfo({
   //   category: 'linear',
   // });
 
-  // const order = await client.submitOrder({
-  //   category: 'linear',
-  //   symbol: 'SEIUSDT',
-  //   side: 'Buy',
-  //   orderType: 'Market',
-  //   qty: '0.1',
-  //   price: '15600',
-  //   timeInForce: 'PostOnly',
-  //   orderLinkId: 'spot-test-postonly',
-  //   orderFilter: 'Order',
-  // });
-
   const orders = await client.getActiveOrders({
-    symbol: 'SEIUSDT',
+    symbol: SYMBOL,
     category: 'linear',
+    orderFilter: 'Order',
   });
 
   console.log('orders', JSON.stringify(orders, null, 2));
 
-  // const kline = await client.getKline({
-  //   category: 'linear',
-  //   symbol: 'SEIUSDT',
-  //   interval: '15',
-  //   start: getUnixTime(addDays(new Date(), -2)) * 1000,
-  //   end: getUnixTime(new Date()) * 1000,
-  // });
-
-  // console.log('info', info);
-  // fs.writeFileSync('kline', JSON.stringify(kline, null, 2));
+  return orders.result.list;
 };
 
-run();
+const cancelOrder = async () => {
+  const cancelRes = await client.cancelAllOrders({
+    symbol: SYMBOL,
+    category: 'linear',
+  });
+
+  console.log('cancelRes', JSON.stringify(cancelRes, null, 2));
+};
+
+const getPosition = async () => {
+  const position = await client.getPositionInfo({
+    symbol: SYMBOL,
+    category: 'linear',
+  });
+
+  console.log('position', JSON.stringify(position, null, 2));
+};
+
+const closePosition = async () => {
+  const closeRes = await client.submitOrder({
+    category: 'linear',
+    symbol: SYMBOL,
+    side: 'Sell',
+    orderType: 'Market',
+    qty: '0',
+    reduceOnly: true,
+  });
+
+  console.log(closeRes);
+};
+
+// cancelOrder();
+// getOrders();
+// placeOrder();
+getPosition();
+// closePosition();

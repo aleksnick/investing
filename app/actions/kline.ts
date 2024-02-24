@@ -1,9 +1,9 @@
 'use server';
 
 import { ByBitConnectorCreator } from '../connectors/ByBit';
-import { KlineRequest } from '../types';
+import { Kline } from '../types';
 
-export const kline = async (options: KlineRequest) => {
+export const kline: Kline = async (options) => {
   const byBitConnector = ByBitConnectorCreator({
     key: '',
     secret: '',

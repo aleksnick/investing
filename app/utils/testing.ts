@@ -30,20 +30,22 @@ export const testing: TestingBox = async (
   });
 
   for await (const timestamp of times) {
-    await testConnector.checkTpl?.(symbol, timestamp);
+    testConnector.checkTpl(symbol, timestamp);
+
     await strategy(symbol, timestamp, testConnector);
-    const stat = testConnector.getStat?.();
+
+    const stat = testConnector.getStat();
 
     bar.tick({
       id: chalk.blue(`#${id}`),
-      orders: chalk.cyan(stat?.orders),
-      amount: chalk.green(`${stat?.amount.toFixed(2)}$`),
-      minamount: chalk.red(`${stat?.minAmount.toFixed(2)}$`),
+      orders: chalk.cyan(stat.orders),
+      amount: chalk.green(`${stat.amount.toFixed(2)}$`),
+      minamount: chalk.red(`${stat.minAmount.toFixed(2)}$`),
       date: chalk.yellow(formatUnix(timestamp)),
     });
   }
 
-  testConnector.saveStat?.(symbol, id);
+  testConnector.saveStat(symbol, id);
 
   return testConnector.getStat();
 };
