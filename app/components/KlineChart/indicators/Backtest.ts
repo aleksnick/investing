@@ -24,6 +24,8 @@ export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
           return {};
         }
 
+        console.log('calc', order);
+
         return {
           text: order.type === 'BUY' ? '🍏' : '🍎',
           backtest: order.price,
@@ -38,6 +40,8 @@ export const Backtest = async (chart: Chart, symbol: string, id = '1') => {
       const result = indicator.result;
       for (let i = from; i < to; i++) {
         const data = result[i];
+
+        console.log('draw', data?.backtest);
 
         if (data?.backtest) {
           const x = xAxis.convertToPixel(i);

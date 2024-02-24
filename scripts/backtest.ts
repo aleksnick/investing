@@ -1,14 +1,12 @@
 const ListIt = require('list-it');
 import chalk from 'chalk';
-import { getUnixTime, subDays } from 'date-fns';
+import { getUnixTime } from 'date-fns';
 import { testing } from '../app/utils/testing';
 import { MaStrategyCreator, config } from '../app/strategy/MA';
 import { TestConfig } from '../app/types';
 
-// const start = getUnixTime(new Date('2024-01-24')) * 1000;
-// const end = getUnixTime(new Date('2024-02-24')) * 1000;
-const start = getUnixTime(subDays(new Date(), 30)) * 1000;
-const end = getUnixTime(new Date()) * 1000;
+const start = getUnixTime(new Date('2024-01-24')) * 1000;
+const end = getUnixTime(new Date('2024-02-24')) * 1000;
 
 const TEST_CONFIG: TestConfig = [
   {
@@ -19,6 +17,21 @@ const TEST_CONFIG: TestConfig = [
     },
     strategyConfig: {
       ...config,
+      PERIODS: [2, 50],
+      tpl: [
+        {
+          rate: 0.2,
+          profit: 0.02,
+        },
+        {
+          rate: 0.6,
+          profit: 0.04,
+        },
+        {
+          rate: 0.2,
+          profit: 0.8,
+        },
+      ],
     },
   },
   {
@@ -32,17 +45,17 @@ const TEST_CONFIG: TestConfig = [
       PERIODS: [2, 50]
     },
   },
-  {
-    options: {
-      symbol: 'SUIUSDT',
-      start,
-      end,
-    },
-    strategyConfig: {
-      ...config,
-      PERIODS: [3, 150]
-    },
-  },
+  // {
+  //   options: {
+  //     symbol: 'SUIUSDT',
+  //     start,
+  //     end,
+  //   },
+  //   strategyConfig: {
+  //     ...config,
+  //     PERIODS: [3, 150]
+  //   },
+  // },
 ];
 
 const HEADERS = [

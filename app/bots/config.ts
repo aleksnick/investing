@@ -10,11 +10,11 @@ export const config: BotConfig = [
       tpl: [
         {
           rate: 0.33,
-          profit: 0.05,
+          profit: 0.03,
         },
         {
           rate: 0.33,
-          profit: 0.1,
+          profit: 0.7,
         },
         {
           rate: 0.33,

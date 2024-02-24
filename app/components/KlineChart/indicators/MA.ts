@@ -2,7 +2,11 @@ import { SMA } from 'technicalindicators';
 import { registerIndicator, Chart } from 'klinecharts';
 import { KlineChartData } from '../../../types';
 
-export const MaIndicator = (chart: Chart, data: KlineChartData, periods: number[]) => {
+export const MaIndicator = (
+  chart: Chart,
+  data: KlineChartData,
+  periods: number[],
+) => {
   const closesPrices = data.map((item) => item.close);
 
   const values = periods.map((period) =>

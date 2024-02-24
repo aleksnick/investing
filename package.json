@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "backtest": "time yarn ts-node ./scripts/backtest",
+    "bot": "time yarn ts-node ./scripts/bot",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "prettify": "yarn prettier -c -w ./app ./scripts",
     "start": "next start",
     "test": "time yarn ts-node ./scripts/test",
     "update-cache": "time yarn ts-node ./scripts/update"

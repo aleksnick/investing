@@ -115,11 +115,19 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
         return null;
       }
 
-      return positionRes.result.list.map((item) => ({
-        symbol: item.symbol,
-        price: Number.parseFloat(item.avgPrice),
-        qty: Number.parseFloat(item.size),
-      }))?.[0];
+      const positions = positionRes.result.list
+        .filter((item) => Number.parseFloat(item.size) > 0)
+        .map((item) => ({
+          symbol: item.symbol,
+          price: Number.parseFloat(item.avgPrice),
+          qty: Number.parseFloat(item.size),
+        }));
+
+      if (!positions || _.isEmpty(positions)) {
+        return null;
+      }
+
+      return positions[0];
     },
     placeOrder: async ({ symbol, price, qty }, TPL) => {
       const client = getClient(config);
@@ -147,7 +155,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
           symbol: 'SUIUSDT',
           tpSize: tplSize.toFixed(0),
           tpslMode: 'Partial',
-          takeProfit: `${price * (100 + tpl.profit)}`,
+          takeProfit: `${price * (1 + tpl.profit)}`,
           tpOrderType: 'Market',
           positionIdx: 0,
         });

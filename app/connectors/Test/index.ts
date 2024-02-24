@@ -41,7 +41,7 @@ export const TestConnectorCreator: TCC = (config) => {
   };
 
   const kline: Kline = async (options) => {
-    if (LOADED_DATA.length < 1) {
+    if (_.isEmpty(LOADED_DATA)) {
       await loadData(options);
     }
 
@@ -63,9 +63,7 @@ export const TestConnectorCreator: TCC = (config) => {
       setCache('backtest', `${symbol}_${id}`, ORDER_LOG);
     },
     getPosition: () => {
-      return new Promise((resolve) =>
-        resolve(CURRENT_POSITION || null),
-      );
+      return new Promise((resolve) => resolve(CURRENT_POSITION || null));
     },
     checkTpl: async (symbol: string, timestamp: number) => {
       if (
@@ -94,13 +92,18 @@ export const TestConnectorCreator: TCC = (config) => {
       }
 
       TPL = TPL.filter(({ done }) => !done).map((tpl, i) => {
-        if (!CURRENT_POSITION || price < CURRENT_POSITION.price * (1 + tpl.profit)) {
+        if (
+          !CURRENT_POSITION ||
+          price < CURRENT_POSITION.price * (1 + tpl.profit)
+        ) {
           return tpl;
         }
 
         const qty = ORIGINAL_QTY * tpl.rate;
 
-        const summ = evaluate(`(${price} - ${CURRENT_POSITION.price}) * ${qty}`);
+        const summ = evaluate(
+          `(${price} - ${CURRENT_POSITION.price}) * ${qty}`,
+        );
 
         AMOUNT = evaluate(`${AMOUNT} + ${summ}`);
         CURRENT_POSITION.qty = evaluate(`${CURRENT_POSITION.qty} - ${qty}`);
