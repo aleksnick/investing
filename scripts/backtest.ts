@@ -42,7 +42,7 @@ const TEST_CONFIG: TestConfig = [
     },
     strategyConfig: {
       ...config,
-      PERIODS: [2, 50]
+      PERIODS: [2, 50],
     },
   },
   // {

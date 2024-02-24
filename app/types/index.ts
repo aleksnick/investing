@@ -67,7 +67,7 @@ export type Position = {
   symbol: string;
   qty: number;
   price: number;
-}
+};
 
 export type OrderLog = Order & {
   type: 'BUY' | 'SELL';
@@ -92,7 +92,7 @@ export interface ConnectorConfig {
 interface Bot {
   symbol: string;
   strategy: Strategy;
-};
+}
 
 export type BotConfig = Bot[];
 

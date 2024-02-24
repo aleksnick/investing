@@ -13,4 +13,4 @@ export const getDataTimestamp = (data: KlineChartData) => {
 
 export const formatUnix = (dt: number) => {
   return format(new Date(dt), 'd MMM u HH:mm:ss');
-}
+};

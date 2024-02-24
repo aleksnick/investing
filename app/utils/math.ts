@@ -8,5 +8,5 @@ export const diffRel = (a: number, b: number) => {
     return 0;
   }
 
-  return ((1 - (min / max)) * 100);
+  return (1 - min / max) * 100;
 };
