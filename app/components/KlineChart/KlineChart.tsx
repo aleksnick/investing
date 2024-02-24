@@ -12,7 +12,7 @@ import { WmaIndicator } from './indicators/WMA';
 import { VolIndicator } from './indicators/VOL';
 import { Backtest } from './indicators/Backtest';
 
-const SYMBOL = 'SUIUSDT';
+const SYMBOL = 'SEIUSDT';
 const INTERVAL = '5';
 
 export const KlineChart = () => {
