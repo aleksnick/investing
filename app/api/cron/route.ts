@@ -3,7 +3,9 @@ import { ByBitConnectorCreator } from '../../connectors/ByBit';
 import { config } from '../../bots/config';
 
 export const runtime = 'nodejs';
-export const preferredRegion = ['iad1'];
+export const preferredRegion = ['arn1'];
+export const dynamic = 'force-dynamic';
+export const generateStaticParams = () => [];
 
 export async function GET() {
   const byBitConnector = ByBitConnectorCreator({
