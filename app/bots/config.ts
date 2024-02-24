@@ -18,7 +18,7 @@ export const config: BotConfig = [
         },
         {
           rate: 0.3,
-          profit: 0.8,
+          profit: 0.08,
         },
       ],
     }),

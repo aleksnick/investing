@@ -2,8 +2,6 @@ import { getUnixTime } from 'date-fns';
 import { ByBitConnectorCreator } from '../../connectors/ByBit';
 import { config } from '../../bots/config';
 
-export const runtime = 'edge';
-
 export async function GET() {
   const byBitConnector = ByBitConnectorCreator({
     key: '',

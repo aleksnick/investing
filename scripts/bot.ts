@@ -1,7 +1,7 @@
-import bot from '../app/api/bot';
+import { GET as Bot } from '../app/api/cron/route';
 
 const run = async () => {
-  await bot();
+  await Bot();
 };
 
 run();
