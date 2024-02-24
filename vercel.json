@@ -2,7 +2,7 @@
   "regions": ["arn1"],
   "crons": [
     {
-      "path": "/api/cron",
+      "path": "/api/bot",
       "schedule": "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
     }
   ]
