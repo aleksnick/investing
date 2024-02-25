@@ -11,7 +11,7 @@ const end = getUnixTime(new Date()) * 1000;
 const TEST_CONFIG: TestConfig = [
   {
     options: {
-      symbol: 'SUIUSDT',
+      symbol: 'SEIUSDT',
       start,
       end,
     },
@@ -36,40 +36,79 @@ const TEST_CONFIG: TestConfig = [
   },
   {
     options: {
-      symbol: 'SUIUSDT',
+      symbol: 'SEIUSDT',
       start,
       end,
     },
     strategyConfig: {
-      ...config,
       PERIODS: [2, 50],
+      LIMIT: 200,
       tpl: [
         {
           rate: 0.3,
-          profit: 0.03,
+          profit: 0.02,
         },
         {
           rate: 0.3,
-          profit: 0.06,
+          profit: 0.04,
         },
         {
           rate: 0.3,
-          profit: 0.9,
+          profit: 0.08,
         },
       ],
     },
   },
-  // {
-  //   options: {
-  //     symbol: 'SUIUSDT',
-  //     start,
-  //     end,
-  //   },
-  //   strategyConfig: {
-  //     ...config,
-  //     PERIODS: [3, 150]
-  //   },
-  // },
+  {
+    options: {
+      symbol: 'SEIUSDT',
+      start,
+      end,
+    },
+    strategyConfig: {
+      PERIODS: [2, 99],
+      LIMIT: 200,
+      tpl: [
+        {
+          rate: 0.3,
+          profit: 0.02,
+        },
+        {
+          rate: 0.3,
+          profit: 0.04,
+        },
+        {
+          rate: 0.3,
+          profit: 0.08,
+        },
+      ],
+    },
+  },
+  {
+    options: {
+      symbol: 'SEIUSDT',
+      start,
+      end,
+    },
+    strategyConfig: {
+      PERIODS: [2, 99],
+      LIMIT: 200,
+      tpl: [
+        {
+          rate: 0.3,
+          profit: 0.04,
+        },
+        {
+          rate: 0.3,
+          profit: 0.08,
+        },
+        {
+          rate: 0.3,
+          profit: 0.16,
+        },
+      ],
+    },
+  },
 ];
 
 const HEADERS = [
