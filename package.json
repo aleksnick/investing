@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "backtest": "time yarn ts-node ./scripts/backtest",
-    "bot": "time yarn ts-node ./scripts/bot",
+    "backtest": "time yarn ts-node ./src/scripts/backtest",
+    "bot": "time yarn ts-node ./src/scripts/bot",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "prettify": "yarn prettier -c -w ./app ./scripts",
+    "prettify": "yarn prettier -c -w ./src",
     "start": "next start",
-    "test": "time yarn ts-node ./scripts/test",
-    "update-cache": "time yarn ts-node ./scripts/update"
+    "test": "time yarn ts-node ./src/scripts/test",
+    "update-cache": "time yarn ts-node ./src/scripts/update"
   },
   "dependencies": {
+    "@ef-carbon/tspm": "^2.2.5",
     "bybit-api": "^3.9.0",
     "chalk": "4.1.2",
     "date-fns": "^3.3.1",
@@ -28,7 +29,8 @@
     "progress": "^2.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "technicalindicators": "^3.1.0"
+    "technicalindicators": "^3.1.0",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/ejs": "^3",
