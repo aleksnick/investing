@@ -24,6 +24,7 @@ const LIST = [
   'SEIUSDT',
   'TIAUSDT',
   'DYDXUSDT',
+  'DYMUSDT',
 ];
 
 const render = async () => {

@@ -10,6 +10,7 @@ const data_SUIUSDT_5 = require('../data/SUIUSDT_5') as [];
 const data_SEIUSDT_5 = require('../data/SEIUSDT_5') as [];
 const data_TIAUSDT_5 = require('../data/TIAUSDT_5') as [];
 const data_DYDXUSDT_5 = require('../data/DYDXUSDT_5') as [];
+const data_DYMUSDT_5 = require('../data/DYMUSDT_5') as [];
 
 export const data: Record<string, [] | null> = {
   data_BTCUSDT_5,
@@ -24,4 +25,5 @@ export const data: Record<string, [] | null> = {
   data_SEIUSDT_5,
   data_TIAUSDT_5,
   data_DYDXUSDT_5,
+  data_DYMUSDT_5,
 };

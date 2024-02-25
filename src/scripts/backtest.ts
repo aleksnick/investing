@@ -11,7 +11,7 @@ const end = getUnixTime(new Date()) * 1000;
 const TEST_CONFIG: TestConfig = [
   {
     options: {
-      symbol: 'OPUSDT',
+      symbol: 'DYMUSDT',
       start,
       end,
     },
@@ -36,7 +36,7 @@ const TEST_CONFIG: TestConfig = [
   },
   {
     options: {
-      symbol: 'OPUSDT',
+      symbol: 'DYMUSDT',
       start,
       end,
     },
@@ -61,7 +61,7 @@ const TEST_CONFIG: TestConfig = [
   },
   {
     options: {
-      symbol: 'OPUSDT',
+      symbol: 'DYMUSDT',
       start,
       end,
     },
@@ -86,7 +86,7 @@ const TEST_CONFIG: TestConfig = [
   },
   {
     options: {
-      symbol: 'OPUSDT',
+      symbol: 'DYMUSDT',
       start,
       end,
     },

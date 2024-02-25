@@ -6,7 +6,6 @@ export const runtime = 'nodejs';
 export const preferredRegion = ['arn1'];
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
-export const memory = 3008;
 export const generateStaticParams = () => [];
 
 export async function GET() {
