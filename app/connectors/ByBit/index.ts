@@ -134,7 +134,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
 
       const orderRes = await client.submitOrder({
         category: 'linear',
-        symbol: symbol,
+        symbol,
         side: 'Buy',
         orderType: 'Market',
         qty: qty.toFixed(0),
@@ -152,7 +152,7 @@ export const ByBitConnectorCreator: ConnectorCreator = (config) => {
 
         const tplRes = await client.setTradingStop({
           category: 'linear',
-          symbol: 'SUIUSDT',
+          symbol,
           tpSize: tplSize.toFixed(0),
           tpslMode: 'Partial',
           takeProfit: `${price * (1 + tpl.profit)}`,
