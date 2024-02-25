@@ -5,7 +5,9 @@ import prettier from 'prettier';
 import { getUnixTime, subDays } from 'date-fns';
 import { ByBitConnectorCreator } from '@src/connectors/ByBit';
 
-const start = getUnixTime(subDays(new Date(), 120)) * 1000;
+const DAYS = 90;
+
+const start = getUnixTime(subDays(new Date(), DAYS)) * 1000;
 const end = getUnixTime(new Date()) * 1000;
 const INTERVAL = '5';
 
