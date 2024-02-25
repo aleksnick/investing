@@ -6,7 +6,7 @@ export const config: BotConfig = [
     symbol: 'SUIUSDT',
     strategy: MaStrategyCreator({
       PERIODS: [2, 50],
-      LIMIT: 200,
+      LIMIT: 400,
       tpl: [
         {
           rate: 0.3,
@@ -27,7 +27,7 @@ export const config: BotConfig = [
     symbol: 'SEIUSDT',
     strategy: MaStrategyCreator({
       PERIODS: [2, 99],
-      LIMIT: 200,
+      LIMIT: 400,
       tpl: [
         {
           rate: 0.3,
@@ -40,6 +40,27 @@ export const config: BotConfig = [
         {
           rate: 0.3,
           profit: 0.16,
+        },
+      ],
+    }),
+  },
+  {
+    symbol: 'TIAUSDT',
+    strategy: MaStrategyCreator({
+      PERIODS: [2, 50],
+      LIMIT: 400,
+      tpl: [
+        {
+          rate: 0.3,
+          profit: 0.02,
+        },
+        {
+          rate: 0.3,
+          profit: 0.04,
+        },
+        {
+          rate: 0.3,
+          profit: 0.08,
         },
       ],
     }),

@@ -11,7 +11,7 @@ const end = getUnixTime(new Date()) * 1000;
 const TEST_CONFIG: TestConfig = [
   {
     options: {
-      symbol: 'SEIUSDT',
+      symbol: 'OPUSDT',
       start,
       end,
     },
@@ -21,22 +21,22 @@ const TEST_CONFIG: TestConfig = [
       tpl: [
         {
           rate: 0.3,
-          profit: 0.02,
-        },
-        {
-          rate: 0.3,
           profit: 0.04,
         },
         {
           rate: 0.3,
-          profit: 0.8,
+          profit: 0.08,
+        },
+        {
+          rate: 0.3,
+          profit: 0.16,
         },
       ],
     },
   },
   {
     options: {
-      symbol: 'SEIUSDT',
+      symbol: 'OPUSDT',
       start,
       end,
     },
@@ -61,7 +61,7 @@ const TEST_CONFIG: TestConfig = [
   },
   {
     options: {
-      symbol: 'SEIUSDT',
+      symbol: 'OPUSDT',
       start,
       end,
     },
@@ -86,7 +86,7 @@ const TEST_CONFIG: TestConfig = [
   },
   {
     options: {
-      symbol: 'SEIUSDT',
+      symbol: 'OPUSDT',
       start,
       end,
     },
