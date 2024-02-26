@@ -5,13 +5,13 @@ import { testing } from '@src/utils/testing';
 import { MaStrategyCreator, config } from '@src/strategy/MA';
 import { TestConfig } from '@src/types';
 
-const start = getUnixTime(subDays(new Date(), 30)) * 1000;
+const start = getUnixTime(subDays(new Date(), 3)) * 1000;
 const end = getUnixTime(new Date()) * 1000;
 
 const TEST_CONFIG: TestConfig = [
   {
     options: {
-      symbol: 'DYMUSDT',
+      symbol: 'SUIUSDT',
       start,
       end,
     },
@@ -34,81 +34,81 @@ const TEST_CONFIG: TestConfig = [
       ],
     },
   },
-  {
-    options: {
-      symbol: 'DYMUSDT',
-      start,
-      end,
-    },
-    strategyConfig: {
-      PERIODS: [2, 50],
-      LIMIT: 200,
-      tpl: [
-        {
-          rate: 0.3,
-          profit: 0.02,
-        },
-        {
-          rate: 0.3,
-          profit: 0.04,
-        },
-        {
-          rate: 0.3,
-          profit: 0.08,
-        },
-      ],
-    },
-  },
-  {
-    options: {
-      symbol: 'DYMUSDT',
-      start,
-      end,
-    },
-    strategyConfig: {
-      PERIODS: [2, 99],
-      LIMIT: 200,
-      tpl: [
-        {
-          rate: 0.3,
-          profit: 0.02,
-        },
-        {
-          rate: 0.3,
-          profit: 0.04,
-        },
-        {
-          rate: 0.3,
-          profit: 0.08,
-        },
-      ],
-    },
-  },
-  {
-    options: {
-      symbol: 'DYMUSDT',
-      start,
-      end,
-    },
-    strategyConfig: {
-      PERIODS: [2, 99],
-      LIMIT: 200,
-      tpl: [
-        {
-          rate: 0.3,
-          profit: 0.04,
-        },
-        {
-          rate: 0.3,
-          profit: 0.08,
-        },
-        {
-          rate: 0.3,
-          profit: 0.16,
-        },
-      ],
-    },
-  },
+  // {
+  //   options: {
+  //     symbol: 'DYMUSDT',
+  //     start,
+  //     end,
+  //   },
+  //   strategyConfig: {
+  //     PERIODS: [2, 50],
+  //     LIMIT: 200,
+  //     tpl: [
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.02,
+  //       },
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.04,
+  //       },
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.08,
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   options: {
+  //     symbol: 'DYMUSDT',
+  //     start,
+  //     end,
+  //   },
+  //   strategyConfig: {
+  //     PERIODS: [2, 99],
+  //     LIMIT: 200,
+  //     tpl: [
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.02,
+  //       },
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.04,
+  //       },
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.08,
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   options: {
+  //     symbol: 'DYMUSDT',
+  //     start,
+  //     end,
+  //   },
+  //   strategyConfig: {
+  //     PERIODS: [2, 99],
+  //     LIMIT: 200,
+  //     tpl: [
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.04,
+  //       },
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.08,
+  //       },
+  //       {
+  //         rate: 0.3,
+  //         profit: 0.16,
+  //       },
+  //     ],
+  //   },
+  // },
 ];
 
 const HEADERS = [
